@@ -1,7 +1,7 @@
 const React = require('react')
 const Default = require('../components/Layout')
 
-function New({ inventory }) {
+function New() {
     return (
         <Default>
             <h2>Add a new shoe</h2>
@@ -20,7 +20,7 @@ function New({ inventory }) {
                     id="name"
                     required
                 />
-                <label htmlFor="type">Type</label>
+                <label htmlFor="type">M/W?</label>
                 <input
                     type="text"
                     name="type"
@@ -58,4 +58,4 @@ function New({ inventory }) {
     )
 }
 
-module.exports = New
+module.exports = New()

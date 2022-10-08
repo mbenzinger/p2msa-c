@@ -9,4 +9,5 @@ root.render(
   </React.StrictMode>
 );
 
+<script src="new.jsx"></script>;
 
