@@ -38,7 +38,7 @@ function Edit({ inventory }) {
                     required
                     defaultValue={inventory.size}
                 />
-                <label htmlFor="sku">SKU</label>
+                <label htmlFor="sku">SN#</label>
                 <input
                     type="text"
                     name="sku"
