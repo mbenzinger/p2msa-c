@@ -1,7 +1,7 @@
 const React = require('react')
 const Default = require('../components/Layout')
 
-function New() {
+function New({ inventory }) {
     return (
         <Default>
             <h2>Add a new shoe</h2>
@@ -59,3 +59,5 @@ function New() {
 }
 
 module.exports = New()
+
+
