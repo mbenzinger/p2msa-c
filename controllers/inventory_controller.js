@@ -14,7 +14,72 @@ inventory.get('/HomePage', (req, res) => {
 
 //SEED
 inventory.get('/data/seed', (req, res) => {
-    Inventory.insertMany(inventorySeedData)
+    Inventory.insertMany([
+        {
+            company: 'Keen',
+            name: 'Atlanta',
+            type: 'mens',
+            size: '8',
+            sku: '1023218',
+            qty: 5
+        },
+        {
+            company: 'Keen',
+            name: 'Braddock',
+            type: 'mens',
+            size: '9',
+            sku: '1020162',
+            qty: 2
+        },
+        {
+            company: 'Keen',
+            name: 'Pittsburgh',
+            type: 'mens',
+            size: '9.5',
+            sku: '1009709',
+            qty: 0
+        },
+        {
+            company: 'Keen',
+            name: 'Detroit',
+            type: 'mens',
+            size: '10',
+            sku: '1020039',
+            qty: 1
+        },
+        {
+            company: 'Keen',
+            name: 'PTC 5/0',
+            type: 'mens',
+            size: '10.5',
+            sku: '1006983',
+            qty: 6
+        },
+        {
+            company: 'Keen',
+            name: 'Birmingham',
+            type: 'mens',
+            size: '10.5',
+            sku: '1026360',
+            qty: 4
+        },
+        {
+            company: 'Keen',
+            name: 'Flint',
+            type: 'mens',
+            size: '8',
+            sku: '1023268',
+            qty: 0
+        },
+        {
+            company: 'Keen',
+            name: 'Vista',
+            type: 'mens',
+            size: '10',
+            sku: '1026371',
+            qty: 5
+        },
+    ])
         .then(res.redirect('/HomePage'))
 })
 
@@ -75,95 +140,3 @@ inventory.delete('/:id', (req, res) => {
 
 // Export
 module.exports = inventory
-
-//ORIGINAL SQL STUFF
-// // DEPENDENCIES
-
-// const shoes = require('express').Router()
-// const db = require('./models')
-// const { Op } = require('sequelize')
-// const { Inventory, ShoeModel } = db
-
-// // FIND ALL SHOES
-// shoes.get('/', async (req, res) => {
-//     try {
-//         const foundShoes = await shoes.findAll({
-//             order: [['company', 'ASC'], ['shoe_model', 'ASC']],
-//             where: {
-//                 name: { [Op.like]: `%${req.query.name ? req.query.name : ''}%` }
-//             }
-//         })
-//         res.status(200).json(foundShoes)
-//     } catch (error) {
-//         res.status(500).json(error)
-//     }
-// })
-
-// //FIND A SPECIFIC SHOE
-// shoes.get('/:name', async (req, res) => {
-//     try {
-//         const foundShoe = await shoes.findOne({
-//             where: { name: req.params.name },
-//             include: [
-//                 {
-//                     model: ShoeModel,
-//                     as: "model",
-//                     where: { name: { [Op.like]: `%${req.query.event ? req.query.event : ''}%` } }
-//                 }
-//             ]
-//         })
-//         res.status(200).json(foundShoe)
-//     } catch (error) {
-//         res.status(500).json(error)
-//     }
-// })
-
-
-// // CREATE A SHOE
-// shoes.post('/', async (req, res) => {
-//     try {
-//         const newShoe = await shoes.create(req.body)
-//         res.status(200).json({
-//             message: 'Successfully inserted a new shoe',
-//             data: newShoe
-//         })
-//     } catch (err) {
-//         res.status(500).json(err)
-//     }
-// })
-
-// // UPDATE A SHOE
-// shoes.put('/:id', async (req, res) => {
-//     try {
-//         const updatedShoes = await shoes.update(req.body, {
-//             where: {
-//                 Shoe_id: req.params.id
-//             }
-//         })
-//         res.status(200).json({
-//             message: `Successfully updated ${updatedShoes} shoe(s)`
-//         })
-//     } catch (err) {
-//         res.status(500).json(err)
-//     }
-// })
-
-// // DELETE A SHOE
-// shoes.delete('/:id', async (req, res) => {
-//     try {
-//         const deletedShoes = await shoes.destroy({
-//             where: {
-//                 shoe_id: req.params.id
-//             }
-//         })
-//         res.status(200).json({
-//             message: `Successfully deleted ${deletedShoes} shoe(s)`
-//         })
-//     } catch (err) {
-//         res.status(500).json(err)
-//     }
-// })
-
-
-// // EXPORT
-// module.exports = shoes
