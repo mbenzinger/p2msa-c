@@ -10,7 +10,8 @@ res.send({ data: "received" });
 });
 const PORT = process.env.PORT || 5000;
 const mongoose = require('mongoose')
-
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
 
 require('dotenv').config()
 mongoose.connect(process.env.MONGO_URI, {
