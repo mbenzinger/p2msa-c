@@ -3,7 +3,8 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 const app = express();
-app.use(express.static(path.resolve(__dirname, "./client/public")));
+// app.use(express.static(path.resolve(__dirname, "./client/public")));
+app.use(express.static(path.resolve(__dirname, ".")));
 app.use(cors());
 app.get("/api", async (req, res) => {
 res.send({ data: "received" });
