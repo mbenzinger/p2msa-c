@@ -10,11 +10,11 @@ Grant Schlimgen
 
 William Smith
 
-Sixto Herrera
+Sixto Herrera (dropped course mid-project)
 
 ## Mission Statement
 
-The purpose of this project is to build, from the ground up, an operating inventory system for managing on-site stock at a retail establishment. Upon completion, users accessing the application will be able to control their supply in an easy-to-use format with immediate results.  
+The purpose of this project is to build, from the ground up, an operating inventory system for managing on-site stock at a retail establishment. Upon completion, users accessing the application will be able to access their supply in an easy-to-use format with immediate results.  
 
 ## Functionality
 
@@ -28,7 +28,7 @@ Any user wanting to view inventory will be able to pull up real time results for
 
 ### Update 
 
-When products are added, removed, or sold, users will be able to change the name or number of a particular item to accurately reflect availability at all times. 
+When products are added, removed or sold, users will be able to change the name or number of a particular item to accurately reflect availability at all times. 
 
 ### Destroy 
 
